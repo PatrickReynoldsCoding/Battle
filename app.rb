@@ -1,4 +1,5 @@
 require "./lib/player.rb"
+require "./lib/game.rb"
 require "sinatra/base"
 require "sinatra/reloader"
 
@@ -15,7 +16,6 @@ get '/' do
 end
 
 post '/names' do
-  p params
   $player1 = Player.new(params[:p1name])
   $player2 = Player.new(params[:p2name])
   redirect '/play'
@@ -31,7 +31,7 @@ end
 get '/attack' do
   @p1name = $player1
   @p2name = $player2
-  @p1name.attack(@p2name)
+  Game.new.attack(@p2name)
   erb :attack
 end
 
