@@ -10,3 +10,9 @@ class Game
   def player_2
     @players.last
   end
+
+  def attack(player)
+    player.receive_damage
+  end   
+
+end

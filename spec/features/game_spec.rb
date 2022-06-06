@@ -1,17 +1,4 @@
 describe Game do
-<<<<<<< HEAD
-  subject(:game) { described_class.new }
-  let(:player_1) { double :player }
-  let(:player_2) { double :player }
-
-  describe '#attack' do
-    it 'damages the player' do
-      expect(player_2).to receive(:receive_damage)
-      game.attack(player_2)
-    end
-  end
-end
-=======
   subject(:game) { described_class.new(player_1, player_2) }
    let(:player_1) { double :player }
    let(:player_2) { double :player }
@@ -27,4 +14,4 @@ end
       expect(game.player_2).to eq player_2
     end
   end
->>>>>>> ef17ba21b2a7b707379054cbc40fef105f76ac70
+end
