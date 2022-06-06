@@ -1,4 +1,5 @@
 require "./lib/player.rb"
+require "./lib/game.rb"
 require "sinatra/base"
 require "sinatra/reloader"
 
@@ -31,7 +32,7 @@ end
 get '/attack' do
   @p1name = $player1
   @p2name = $player2
-  @p1name.attack(@p2name)
+  Game.new.attack(@p2name)
   erb :attack
 end
 
