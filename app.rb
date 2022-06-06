@@ -16,7 +16,6 @@ get '/' do
 end
 
 post '/names' do
-  p params
   $player1 = Player.new(params[:p1name])
   $player2 = Player.new(params[:p2name])
   redirect '/play'

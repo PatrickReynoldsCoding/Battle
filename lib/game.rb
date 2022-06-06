@@ -1,13 +1,12 @@
-class Game #needs to accept two player instances
-
-  # def initialize(player_1, player_2)
-  #   @player_1 = player_1
-  #   @player_2 = player_2
-  # end
-
-
-
-  def attack(player)
-    player.receive_damage
+class Game
+  def initialize(player_1, player_2)
+    @players = [player_1, player_2]
   end
-end
+
+  def player_1
+    @players.first
+  end
+
+  def player_2
+    @players.last
+  end
